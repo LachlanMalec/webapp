@@ -67,7 +67,9 @@ const App: React.FunctionComponent<Record<string, never>> = () => {
         </ElevateOnScroll>
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
           <Toolbar />
-          <Routes></Routes>
+          <Routes>
+            <Route path="/" element={<Landing />} />
+          </Routes>
         </Box>
       </ThemeProvider>
     </ColorModeContext.Provider>
