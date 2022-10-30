@@ -4,7 +4,7 @@
   "description": "This is a React SPA to serve as my personal website, I hope to host information about myself, my projects, and my interests.",
   "main": "index.js",
   "scripts": {
-    "start": "echo \"Error: no start script specified\" && exit 1"
+    "start": "vite"
   },
   "repository": {
     "type": "git",
