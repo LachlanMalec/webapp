@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/LachlanMalec/webapp/issues"
   },
-  "homepage": "https://github.com/LachlanMalec/webapp#readme"
+  "homepage": "https://github.com/LachlanMalec/webapp#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.2"
+  }
 }
