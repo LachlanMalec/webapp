@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Analytics />
-      <body className="dark:bg-slate-800 dark:text-white">
+      <body className="dark:bg-slate-800 dark:text-white bg-topo-pattern">
         <Navbar navigation={navigation} />
         <main>
           <div className="relative isolate px-6 pt-14 lg:px-8">
