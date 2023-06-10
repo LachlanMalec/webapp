@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -22,18 +23,18 @@ export default function Home() {
             Technology, majoring in Computer Science, at QUT.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
-            <a
-              href="#"
+            <Link
+              href="/contact"
               className="rounded-md bg-blueDim px-3.5 py-2.5 text-sm font-semibold text-fg shadow-sm hover:bg-blueDim/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
               Contact Me
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              href="/about"
               className="text-sm font-semibold leading-6 text-fg"
             >
               Find out more <span aria-hidden="true">→</span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

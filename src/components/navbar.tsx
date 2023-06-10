@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
@@ -26,7 +27,7 @@ export default function Navbar({ navigation }: Props) {
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
+          <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Lachlan Malec</span>
             <Image
               className="h-8 w-auto"
@@ -35,7 +36,7 @@ export default function Navbar({ navigation }: Props) {
               width={538}
               alt="logo"
             />
-          </a>
+          </Link>
         </div>
         <div className="flex lg:hidden">
           <button
@@ -49,13 +50,13 @@ export default function Navbar({ navigation }: Props) {
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
           {navigation.map((item) => (
-            <a
+            <Link
               key={item.name}
               href={item.href}
               className="text-sm font-semibold leading-6 text-fg"
             >
               {item.name}
-            </a>
+            </Link>
           ))}
         </div>
         {/*
@@ -98,13 +99,13 @@ export default function Navbar({ navigation }: Props) {
             <div className="-my-6 divide-y divide-text-fg/10">
               <div className="space-y-2 py-6">
                 {navigation.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
                     href={item.href}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-fg hover:bg-bg"
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
               {/*
