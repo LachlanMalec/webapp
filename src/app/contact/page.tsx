@@ -8,10 +8,10 @@ export default function Contact() {
   if (formState.succeeded) {
     return (
       <div className="mx-auto max-w-2xl xl:pt-24 pt-16 text-center">
-        <h2 className="text-3xl font-bold tracking-tight text-fg0 sm:text-4xl">
+        <h2 className="text-4xl font-bold tracking-tight text-fg sm:text-6xl">
           Thank you for your message!
         </h2>
-        <p className="mt-2 text-lg leading-8 text-fg">
+        <p className="mt-6 text-lg leading-8 text-fg0">
           I will get back to you as soon as possible.
         </p>
       </div>
@@ -21,10 +21,10 @@ export default function Contact() {
   return (
     <>
       <div className="mx-auto max-w-2xl xl:pt-24 pt-16 text-center">
-        <h2 className="text-3xl font-bold tracking-tight text-fg0 sm:text-4xl">
+        <h2 className="text-4xl font-bold tracking-tight text-fg sm:text-6xl">
           Contact Me
         </h2>
-        <p className="mt-2 text-lg leading-8 text-fg">
+        <p className="mt-6 text-lg leading-8 text-fg0">
           Please use the form and I will get back to you as soon as possible.
         </p>
       </div>
