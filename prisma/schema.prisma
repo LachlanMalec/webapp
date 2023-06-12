@@ -1,0 +1,34 @@
+datasource db {
+  provider = "postgresql"
+  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+  shadowDatabaseUrl = env("POSTGRES_URL_NON_POOLING") // used for migrations
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Post {
+  id        Int      @id @default(autoincrement())
+  title     String
+  href      String   @unique
+  datetime  DateTime @default(now())
+  category  Category @relation(fields: [categoryId], references: [id])
+  categoryId Int
+  comments  Comment[]
+}
+
+model Category {
+  id    Int    @id @default(autoincrement())
+  name  String
+  posts Post[]
+}
+
+model Comment {
+  id        Int      @id @default(autoincrement())
+  text      String
+  datetime  DateTime @default(now())
+  post      Post     @relation(fields: [postId], references: [id])
+  postId    Int
+}
