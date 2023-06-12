@@ -1,19 +1,35 @@
 import Image from "next/image";
 import Link from "next/link";
+import { PrismaClient } from "@prisma/client";
 
-export default function Home() {
+export default async function Home() {
+  async function getLatestPost() {
+    "use server";
+    const prisma = new PrismaClient();
+    const post = await prisma.post.findFirst({
+      orderBy: {
+        datetime: "desc",
+      },
+      include: {
+        category: true,
+      },
+    });
+    return post;
+  }
+  const post = await getLatestPost();
+
   return (
     <>
       <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-        {/*<div className="hidden sm:mb-8 sm:flex sm:justify-center">
+        {post ? (<div className="hidden sm:mb-8 sm:flex sm:justify-center">
           <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-fg ring-1 ring-blueDim/80 hover:ring-blueDim/90">
-            My latest blog title.{" "}
-            <a href="#" className="font-semibold text-indigo-600">
+            {post?.title}{" "}
+            <Link href="/blog" className="font-semibold text-indigo-600">
               <span className="absolute inset-0" aria-hidden="true" />
               Read now <span aria-hidden="true">&rarr;</span>
-            </a>
+            </Link>
           </div>
-        </div>*/}
+        </div>) : null}
         <div className="text-center">
           <h1 className="text-4xl font-bold tracking-tight text-fg sm:text-6xl">
             Lachlan Malec
