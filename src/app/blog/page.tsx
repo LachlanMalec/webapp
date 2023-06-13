@@ -1,4 +1,5 @@
 import { PrismaClient } from "@prisma/client";
+import Link from "next/link";
 
 export type Post = {
   id: number;
@@ -75,10 +76,10 @@ export default async function Blog() {
             </div>
             <div className="group relative">
               <h3 className="mt-3 text-lg font-semibold leading-6 text-fg0 group-hover:text-gray-600">
-                <a href={post.href}>
+                <Link href={post.id.toString()}>
                   <span className="absolute inset-0" />
                   {post.title}
-                </a>
+                </Link>
               </h3>
               <p className="mt-5 line-clamp-3 text-sm leading-6 text-fg">
                 {post.description}
