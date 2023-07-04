@@ -23,6 +23,16 @@ export default async function Post({
   }
   const post = await getPost();
 
+  if (!post) {
+    return (
+      <div className="mx-auto max-w-2xl xl:pt-24 pt-16 text-center">
+        <h2 className="text-4xl font-bold tracking-tight text-fg sm:text-6xl">
+          Post Not Found
+        </h2>
+      </div>
+    );
+  }
+
   return (
     <div className="mx-auto max-w-7xl px-6 lg:px-8">
       <div className="mx-auto max-w-2xl lg:mx-0 xl:pt-24 pt-16">
@@ -39,9 +49,7 @@ export default async function Post({
         </p>
       </div>
       <div className="mx-auto mt-2 max-w-2xl border-t border-fg pt-10 sm:mt-8 sm:pt-16 lg:mx-0 lg:max-w-none">
-        <div className="prose prose-lg text-fg">
-          {post?.description}
-        </div>
+        <div className="prose prose-lg text-fg">{post?.description}</div>
       </div>
     </div>
   );
