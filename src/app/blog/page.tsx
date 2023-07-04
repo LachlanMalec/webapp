@@ -76,7 +76,7 @@ export default async function Blog() {
             </div>
             <div className="group relative">
               <h3 className="mt-3 text-lg font-semibold leading-6 text-fg0 group-hover:text-gray-600">
-                <Link href={post.id.toString()}>
+                <Link href={`blog/${post.id.toString()}`}>
                   <span className="absolute inset-0" />
                   {post.title}
                 </Link>
